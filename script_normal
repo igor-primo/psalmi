@@ -21,7 +21,7 @@ function calculate () {
 "
 	day="$1"
 	text="${text}${day}\n"
-	text="${text}Prima\n"
+	text="${text}Prima\n\n"
 	#should I include the monastic ones?
 	case "$1" in
 	"Feria Secunda")
@@ -64,7 +64,7 @@ function calculate () {
 		make p1
 	;;
 	esac
-	text="${text}Tertia\n"
+	text="${text}Tertia\n\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 26-*.gabc | grep -v "antiquo\|monasticus"))
@@ -76,7 +76,7 @@ function calculate () {
 		p=($(ls 39-*.gabc | grep -v "antiquo\|monasticus"))
 		make p
 	;;
-	"Feria Quarta")
+		"Feria Quarta")
 		p1=($(ls 53-*.gabc | grep -v "antiquo\|monasticus"))
 		p2=($(ls 54-*.gabc | grep -v "antiquo\|monasticus"))
 		p1=(${p1[@]} ${p2[@]})
@@ -101,7 +101,7 @@ function calculate () {
 		#make p1
 	;;
 	esac
-	text="${text}Sexta\n"
+	text="${text}Sexta\n\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 30-*.gabc | grep -v "antiquo\|monasticus"))
@@ -139,7 +139,7 @@ function calculate () {
 		#make p1
 	;;
 	esac
-	text="${text}Nona\n"
+	text="${text}Nona\n\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 31-*.gabc | grep -v "antiquo\|monasticus"))
@@ -174,6 +174,67 @@ function calculate () {
 	"Dominica")
 		#p1=($(ls 118-*.gabc | grep -v "antiquo\|monasticus"))
 		#make p1
+	;;
+	esac
+	text="${text}Vesperae\n\n"
+	case "$1" in
+	"Feria Secunda")
+		p1=($(ls 114-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 115-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 119-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 120-*.gabc | grep -v "antiquo\|monasticus"))
+		p5=($(ls 121-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]} ${p5[@]})
+		make p1
+	;;
+	"Feria Tertia")
+		p1=($(ls 122-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 123-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 124-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 125-*.gabc | grep -v "antiquo\|monasticus"))
+		p5=($(ls 126-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]} ${p5[@]})
+		make p1
+	;;
+	"Feria Quarta")
+		p1=($(ls 127-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 128-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 129-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 130-*.gabc | grep -v "antiquo\|monasticus"))
+		p5=($(ls 131-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]} ${p5[@]})
+		make p1
+	;;
+	"Feria Quinta")
+		p1=($(ls 132-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 135-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 136-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 137-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]})
+		make p1
+	;;
+	"Feria Sexta")
+		p1=($(ls 138-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 139-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 140-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 141-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]})
+		make p1
+	;;
+	"Sabbato")
+		p1=($(ls 143-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 144-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]})
+		make p1
+	;;
+	"Dominica")
+		p1=($(ls 109-*.gabc | grep -v "antiquo\|monasticus"))
+		p2=($(ls 110-*.gabc | grep -v "antiquo\|monasticus"))
+		p3=($(ls 111-*.gabc | grep -v "antiquo\|monasticus"))
+		p4=($(ls 112-*.gabc | grep -v "antiquo\|monasticus"))
+		p5=($(ls 113-*.gabc | grep -v "antiquo\|monasticus"))
+		p1=(${p1[@]} ${p2[@]} ${p3[@]} ${p4[@]} ${p5[@]})
+		make p1
 	;;
 	esac
 	text="${text}\\\end{document}"
