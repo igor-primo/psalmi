@@ -21,7 +21,7 @@ function calculate () {
 "
 	day="$1"
 	text="${text}${day}\n"
-	text="${text}Prima\n\n"
+	text="${text}\nPrima\n"
 	#should I include the monastic ones?
 	case "$1" in
 	"Feria Secunda")
@@ -64,7 +64,7 @@ function calculate () {
 		make p1
 	;;
 	esac
-	text="${text}Tertia\n\n"
+	text="${text}\nTertia\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 26-*.gabc | grep -v "antiquo\|monasticus"))
@@ -101,7 +101,7 @@ function calculate () {
 		#make p1
 	;;
 	esac
-	text="${text}Sexta\n\n"
+	text="${text}\nSexta\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 30-*.gabc | grep -v "antiquo\|monasticus"))
@@ -139,7 +139,7 @@ function calculate () {
 		#make p1
 	;;
 	esac
-	text="${text}Nona\n\n"
+	text="${text}\nNona\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 31-*.gabc | grep -v "antiquo\|monasticus"))
@@ -176,7 +176,7 @@ function calculate () {
 		#make p1
 	;;
 	esac
-	text="${text}Vesperae\n\n"
+	text="${text}\nVesperae\n"
 	case "$1" in
 	"Feria Secunda")
 		p1=($(ls 114-*.gabc | grep -v "antiquo\|monasticus"))
